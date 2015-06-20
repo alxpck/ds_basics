@@ -1,3 +1,4 @@
+Copy of "Data Science Basics" course from Treehouse
 examples of using Python for introductory data science concepts
 
 
