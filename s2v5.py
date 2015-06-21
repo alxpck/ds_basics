@@ -29,6 +29,15 @@ def find_max_min(data_sample, col, m='max'):
 		pass
 	return val
 
-print("Max / Min... MIN", find_max_min(data_from_csv[1:], 2, 'min'))
-print("Max:", find_max(data_from_csv[1:], 2))
-print("Min", find_min(data_from_csv[1:], 2))
+# print("Max / Min... MIN", find_max_min(data_from_csv[1:], 2, 'min'))
+# print("Max:", find_max(data_from_csv[1:], 2))
+# print("Min", find_min(data_from_csv[1:], 2))
+
+
+# NumPy max and min
+price = my_csv['priceLabel']
+price_in_float = [float(x) for x in price]
+numpy_max = numpy.amax(price_in_float)
+numpy_min = numpy.amin(price_in_float)
+# print(numpy_max)
+# print(numpy_min)
