@@ -21,7 +21,16 @@ def calculate_sum_concise(data_sample):
 	prices = list(map(lambda x: float(x[2]), data_sample[1:]))
 	return sum(prices)
 
+# Learn to use NumPy's built-in sum function
+# Not sure this is better yet, I don't understand it all
+def calc_numpy_sum(price):
+	prices_in_float = [float(line) for line in price]
+	total = numpy.sum(prices_in_float)
+	return total
 
+price = my_csv['priceLabel']
+my_sum = calc_numpy_sum(price)
+print("The sum (numpy):", my_sum) # not sure what that print statement is doing... it it really just saying this is the result from numpy to keep it clear w/ multiple versions? Maybe. I think so. 
 
 # print(calculate_sum_concise(data_from_csv))
 
