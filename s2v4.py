@@ -38,8 +38,8 @@ midpoint = round(number_of_ties / 2)
 
 message = "Average of {} half = ${:03.2f}" # {} is a place holder for a future value, much like "blah blah blah %s is this" % value. The {} placeholder with formatting inside lets us format the string value to three places before the decimal and two after
 
-print(message.format("1st", find_average(data_from_csv[:midpoint], True))) # True = there is a header
-print(message.format("2nd", find_average(data_from_csv[midpoint:], False))) # False = there is not a header
+# print(message.format("1st", find_average(data_from_csv[:midpoint], True))) # True = there is a header
+# print(message.format("2nd", find_average(data_from_csv[midpoint:], False))) # False = there is not a header
 
 
 
