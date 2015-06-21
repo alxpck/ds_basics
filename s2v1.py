@@ -6,6 +6,7 @@ import numpy
 # needed for following along at home
 d = '\t'
 
+# gets everything including the header
 def open_with_csv(filename, d='\t'):
 	data = []
 	with open(filename,  encoding='utf-8') as tsvin:
@@ -36,7 +37,7 @@ DATATYPES = [
 	('material', '|S50')
 ]
 
-# use built-in function of NumPy
+# gets everything EXCEPT the header
 def load_data(filename):
 	my_csv = numpy.genfromtxt(filename, delimiter=d, skip_header=1, invalid_raise=False, names=FIELDNAMES, dtype=DATATYPES)
 	return my_csv
