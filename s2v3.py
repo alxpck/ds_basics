@@ -21,4 +21,4 @@ def list_of_prices(data_sample):
 
 # print(calculate_sum_succinct(data_from_csv))
 
-print(sum(list_of_prices(data_from_csv)))
+# print(sum(list_of_prices(data_from_csv)))
