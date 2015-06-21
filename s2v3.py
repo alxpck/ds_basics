@@ -30,7 +30,7 @@ def calc_numpy_sum(price):
 
 price = my_csv['priceLabel']
 my_sum = calc_numpy_sum(price)
-print("The sum (numpy):", my_sum) # not sure what that print statement is doing... it it really just saying this is the result from numpy to keep it clear w/ multiple versions? Maybe. I think so. 
+# print("The sum (numpy):", my_sum) # not sure what that print statement is doing... it it really just saying this is the result from numpy to keep it clear w/ multiple versions? Maybe. I think so. 
 
 # print(calculate_sum_concise(data_from_csv))
 
