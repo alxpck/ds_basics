@@ -17,6 +17,14 @@ def list_of_prices(data_sample):
 	prices = [float(row[2]) for row in data_sample[1:]]
 	return prices
 
+def calculate_sum_concise(data_sample):
+	prices = list(map(lambda x: float(x[2]), data_sample[1:]))
+	return sum(prices)
+
+
+
+# print(calculate_sum_concise(data_from_csv))
+
 # print('the sum total of prices for all ties in the dataset = ',  calculate_sum(data_from_csv)) # ok we're using the right import, but having two imports is confusing. UPDDATE: No, I don't have to convert the calculate_sum result to a string to add text about it, I just need to use , instead of +
 
 # print(calculate_sum_succinct(data_from_csv))
