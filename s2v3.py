@@ -14,7 +14,7 @@ def calculate_sum_succinct(data_sample):
 
 # Personally, I would abstract this more. I'd make this function return the list of prices and then have a second function that just did the sum of it, or let myself just add the built in sum() function.
 def list_of_prices(data_sample):
-	prices = [float(row[2]) for row in data_sample[1:]]
+	prices = [float(row[2]) for row in data_sample[1:]] #this shorter version of a for loop is called list comprehension
 	return prices
 
 def calculate_sum_concise(data_sample):
