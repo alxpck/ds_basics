@@ -7,4 +7,4 @@ def calculate_sum(data_sample):
 		total += price
 	return total
 
-print('the sum total of prices for all ties in the dataset = ' + str(calculate_sum(data_from_csv))) # ok we're using the right import, but having two imports is confusing. 
+print('the sum total of prices for all ties in the dataset = ',  calculate_sum(data_from_csv)) # ok we're using the right import, but having two imports is confusing. UPDDATE: No, I don't have to convert the calculate_sum result to a string to add text about it, I just need to use , instead of +
