@@ -3,7 +3,7 @@ from s2v2 import *
 def calculate_sum(data_sample):
 	total = 0
 	for row in data_sample[1:]: # slice to start at row two, but I think we should only skip row 1 if we're importing the full csv (data_from_csv), but if we use the data w/ the header (my_csv) we'll be skipping a row that we're not supposed to skip (the actual first row of non-header data). 
-		price = float(row[2]) # I would think of this as column[2], not sure why it's row[2]. 
+		price = float(row[2]) # I would think of this as column[2], not sure why it's row[2]. ... update from later in the course: the 2 is the column number not number of the cell in the row. Row seems to be a more general term than how I'm used to thinking about it. In this case row[2] means the values in column 2. row[x] means the values in column x
 		total += price
 	return total
 
