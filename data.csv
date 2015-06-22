@@ -1,4 +1,4 @@
-	id	priceLabel	name	brandId	brandName	imageLink	desc	vendor	striped	material
+	id	priceLabel	name	brandId	brandName	imageLink	desc	vendor	print	material
 0	399795110	119.83	Burberry London checked silk tie	870	Burberry	http://bim.shopstyle.com/pim/3c/27/3c27ee2884a1163917d41109fc3be1f3_best.jpg	Nude silk tie from Burberry London featuring a classic pointed design and a contrasting black and red house check print.	farfetch.com	_print	_silk
 1	12822215	59.5	BB1 Repp Slim Tie	3415	Brooks Brothers	http://bim.shopstyle.com/pim/6b/63/6b63cc4838699797aac410ea0316faca_best.jpg	"Expertly woven in England, this collection is known for its stripes and vibrant colors. Our signature stripe detailing goes from right to left. Pure silk. 2 5/8"" width. Dry clean. Imported."	Brooks Brothers	_striped	_silk
 2	369523836	119.83	Burberry London check woven tie	870	Burberry	http://bim.shopstyle.com/pim/51/d0/51d0e2b9608115fb0ae74f00eec55457_best.jpg	Beige silk tie from Burberry London featuring a classic pointed design and a signature woven 'House' check.	farfetch.com	unknown	_silk
