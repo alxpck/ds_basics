@@ -11,15 +11,32 @@ max_jcrew = find_max_min(jcrew_ties[1:], 2)
 avg_gucci = find_average(gucci_ties[1:]) # if find_average assumes that the header = False, why are we slicing the list past the first row, isn't the first row actual data in this instance? ... oh, because in gucci_ties[0] is the header, and the find_average() function isn't expecting that row, so we need to skip over it. Got it. 
 avg_jcrew = find_average(jcrew_ties[1:])
 
+striped_ties = filter_col_by_string(data_from_csv, 'print', '_striped')
+print_ties = filter_col_by_string(data_from_csv, 'print', '_print')
+paisley_ties = filter_col_by_string(data_from_csv, 'print', '_paisley')
+solid_ties = filter_col_by_string(data_from_csv, 'print', '_solid')
+
+avg_striped = find_average(striped_ties[1:])
+avg_print = find_average(print_ties[1:])
+avg_paisley = find_average(paisley_ties[1:])
+avg_solid = find_average(solid_ties[1:])
+
 
 breakline = "-" * 10
 message = "{} {} tie price is ${:03.2f}"
+message2 = "{}\t\t${:03.2f}"
 print(breakline)
 print(message.format("Maximum", "Gucci", max_gucci))
 print(message.format("Maximum", "J.Crew", max_jcrew))
 print(breakline)
 print(message.format("Average", "Gucci", avg_gucci))
 print(message.format("Average", "J.Crew", avg_jcrew))
+print(breakline)
+print("Print\t\tAverage")
+print(message2.format("striped", find_average(striped_ties[1:])))
+print(message2.format("print", find_average(print_ties[1:])))
+print(message2.format("paisley", find_average(paisley_ties[1:])))
+print(message2.format("solid", find_average(solid_ties[1:])))
 print(breakline)
 
 
