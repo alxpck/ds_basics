@@ -41,7 +41,7 @@ def filter_col_by_float(data_sample, field, direction, filter_condition):
 
 under_20_bucks = filter_col_by_float(data_from_csv, 'priceLabel', "<=", 20)
 
-print("Found {} ties under $20".format(number_of_records(under_20_bucks)))
+# print("Found {} ties under $20".format(number_of_records(under_20_bucks)))
 
 
 silk_ties = filter_col_by_string(data_from_csv, "material", "_silk")
