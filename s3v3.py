@@ -1,2 +1,2 @@
-from s3v2 import *
+from s3v2 import * # from wafflehouse import * means the function can be used as globals (all globals in that file/lib become globals for me too) I can use wafflehouse's pancake() function just by calling pancake(x) ... if I used import wafflehouse I have access to the file/lib's functions, but not as globals, so I need to associate them with wafflehouse, so to call the pancake() function I would need to use: wafflehouse.pancake(x). General rule of thumb: use import instead of from X import * because import alone keeps my globals less cluttered and makes my code more clearly readable (as I know where the functions and variables came from that I'm referencing). 
 
