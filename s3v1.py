@@ -22,4 +22,4 @@ my_new_csv = create_bool_field_from_scratch_term(data_from_csv, "cashmere")
 
 number_of_cashmere_ties = number_of_records(filter_col_by_bool(my_new_csv, 11))
 
-print("Length:", number_of_cashmere_ties)
+# print("Length:", number_of_cashmere_ties)
