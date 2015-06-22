@@ -56,5 +56,6 @@ falfkafj_ties = filter_col_by_string(data_from_csv, "brandName", "falfkafj") # t
 # print("Found {} cotton ties".format(number_of_records(cotton_ties)))
 # print("Found {} Gucci ties".format(number_of_records(gucci_ties)))
 # print("Found {} falfkafj ties".format(number_of_records(falfkafj_ties)))
-
+# print("Found {} falfkafj ties".format(number_of_records(falfkafj_ties[1:])))
+# print("Found {} falfkafj ties".format(number_of_records_ignore_header(falfkafj_ties)))
 
