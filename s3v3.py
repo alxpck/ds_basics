@@ -7,12 +7,21 @@ jcrew_ties = filter_col_by_string(data_from_csv, 'brandName', 'J.Crew') # this w
 max_gucci = find_max(gucci_ties[1:], 2)
 max_jcrew = find_max_min(jcrew_ties[1:], 2)
 
-message = "Maximum {} tie price is ${:03.2f}"
-print(message.format("Gucci", max_gucci))
-print(message.format("J. Crew", max_jcrew))
 
 avg_gucci = find_average(gucci_ties[1:]) # if find_average assumes that the header = False, why are we slicing the list past the first row, isn't the first row actual data in this instance? ... oh, because in gucci_ties[0] is the header, and the find_average() function isn't expecting that row, so we need to skip over it. Got it. 
 avg_jcrew = find_average(jcrew_ties[1:])
+
+
+breakline = "-" * 10
+message = "{} {} tie price is ${:03.2f}"
+print(breakline)
+print(message.format("Maximum", "Gucci", max_gucci))
+print(message.format("Maximum", "J.Crew", max_jcrew))
+print(breakline)
+print(message.format("Average", "Gucci", avg_gucci))
+print(message.format("Average", "J.Crew", avg_jcrew))
+print(breakline)
+
 
 # print(avg_gucci) # test for myself to understand why we were slicing past the header row when using the find_average() function
 
