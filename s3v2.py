@@ -19,24 +19,29 @@ def filter_col_by_float(data_sample, field, direction, filter_condition):
 	for row in data_sample[1:]:
 		element = float(row[col])
 
-		if direction == "<"
+		if direction == "<":
 			if element < cond:
 				filtered_rows.append(row)
-		elif direction == "<="
+		elif direction == "<=":
 			if element <= cond:
 				filtered_rows.append(row)
-		elif direction == ">"
+		elif direction == ">":
 			if element > cond:
 				filtered_rows.append(row)
-		elif direction == ">="
+		elif direction == ">=":
 			if element >= cond:
 				filtered_rows.append(row)
-		elif direction == "=="
+		elif direction == "==":
 			if element == cond:
 				filtered_rows.append(row)
 		else:
 			pass # the pass statement does nothing. It can be used when a statement is required syntactically but the program requires no action. 
 	return filtered_rows
+
+
+under_20_bucks = filter_col_by_float(data_from_csv, 'priceLabel', "<=", 20)
+
+print("Found {} ties under $20".format(number_of_records(under_20_bucks)))
 
 
 silk_ties = filter_col_by_string(data_from_csv, "material", "_silk")
