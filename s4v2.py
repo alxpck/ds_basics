@@ -24,3 +24,13 @@ def write_min_max_csv(filename, data_sample):
 
 write_min_max_csv('_data/s4-min_max_csv', gucci_ties[1:]) # this time we're skipping over the the header row, because we're not using the header label to choose the column index (because we hard coded the column index, 2, in the function). 
 
+def write_two_cols(filename, data_sample, col1, col2): # similar to the write brnd and price function above, but where we're abstracting the function to accept the column indexes instead of hard coding them into the function
+	new_array = [] # new empty list
+	for record in data_sample: # for loop 
+		new_record = [None] *2 # create two empty elements to each record
+		new_record[0] = record[col1] # assign the value of the data in col1 (index) of the data sample to the first element of the new record
+		new_record[1] = record[col2] # assign the value of the data in col2 (index) of the data sample to the second element of the new record
+		new_array.append(new_record) # append the rows to the array/list
+	write_to_file(filename, new_array) # write the new array to the new file, i.e. reuse that write to file function again
+
+write_two_cols('_data/s4-write_two_cols.csv', gucci_ties[1:], 3, 7) # 3 = product name, 7 = product description
