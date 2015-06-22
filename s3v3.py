@@ -9,6 +9,13 @@ max_jcrew = find_max_min(jcrew_ties[1:], 2)
 
 message = "Maximum {} tie price is ${:03.2f}"
 print(message.format("Gucci", max_gucci))
+print(message.format("J. Crew", max_jcrew))
 
+avg_gucci = find_average(gucci_ties[1:]) # if find_average assumes that the header = False, why are we slicing the list past the first row, isn't the first row actual data in this instance? ... oh, because in gucci_ties[0] is the header, and the find_average() function isn't expecting that row, so we need to skip over it. Got it. 
+avg_jcrew = find_average(jcrew_ties[1:])
+
+# print(avg_gucci) # test for myself to understand why we were slicing past the header row when using the find_average() function
+
+# print(gucci_ties[:2]) # test for myself to understand why we were slicing past the header row when using the find_average() function
 
 # print(gucci_ties[:2]) # this how you slice into a list to return only some of the results. In this case the first two rows. I used this originally to take a look at the jcrew_ties list. I found that we only had a header row, which meant that the list wasn't populated with data. So I looked directaly at the csv file and noticed the brand name didn't have a space between J. and Crew (i.e. "J.Crew" NOT "J. Crew")
