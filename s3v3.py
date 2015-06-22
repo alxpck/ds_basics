@@ -25,19 +25,19 @@ avg_solid = find_average(solid_ties[1:])
 breakline = "-" * 10
 message = "{} {} tie price is ${:03.2f}"
 message2 = "{}\t\t${:03.2f}"
-print(breakline)
-print(message.format("Maximum", "Gucci", max_gucci))
-print(message.format("Maximum", "J.Crew", max_jcrew))
-print(breakline)
-print(message.format("Average", "Gucci", avg_gucci))
-print(message.format("Average", "J.Crew", avg_jcrew))
-print(breakline)
-print("Print\t\tAverage")
-print(message2.format("striped", find_average(striped_ties[1:])))
-print(message2.format("print", find_average(print_ties[1:])))
-print(message2.format("paisley", find_average(paisley_ties[1:])))
-print(message2.format("solid", find_average(solid_ties[1:])))
-print(breakline)
+# print(breakline)
+# print(message.format("Maximum", "Gucci", max_gucci))
+# print(message.format("Maximum", "J.Crew", max_jcrew))
+# print(breakline)
+# print(message.format("Average", "Gucci", avg_gucci))
+# print(message.format("Average", "J.Crew", avg_jcrew))
+# print(breakline)
+# print("Print\t\tAverage")
+# print(message2.format("striped", find_average(striped_ties[1:])))
+# print(message2.format("print", find_average(print_ties[1:])))
+# print(message2.format("paisley", find_average(paisley_ties[1:])))
+# print(message2.format("solid", find_average(solid_ties[1:])))
+# print(breakline)
 
 
 # print(avg_gucci) # test for myself to understand why we were slicing past the header row when using the find_average() function
