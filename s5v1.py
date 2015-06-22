@@ -29,4 +29,8 @@ def create_line_chart(data_sample, title, exported_figure_filename):
 
 	fig.savefig(exported_figure_filename)
 
+create_line_chart([x[2] for x in gucci_ties] # use list comprehension to iterate through the gucci_ties list and chart the results in this case it looks like we're plotting the values from the third row of the data sample (i.e. x[2]), so basically we're making a list of the values from the third row/column of the data sample, but instead of returning the list or assigning it to a variable we're feeding it directly into the creat line chart function as the data sample ... all of that just for the first function argument. 
 
+# list comprehension ... explained? ... start by placing everything inside the brackets, like the list yo, [].  Then place the thing you wanted to append to the list at the beginning of the statement. then use a for loop to iterate throught the set of values. 
+
+# more at http://www.secnetix.de/olli/Python/list_comprehensions.hawk
