@@ -89,3 +89,10 @@ def group_prices_by_range(prices_in_float): # we used this function in a previou
 
 		tally[bucket] += 1
 	return tally
+
+price_groups = group_prices_by_range(price_in_float)
+brands = my_csv['brandName']
+columns = ["$0-50", "$50-100", "$100-150", "$150-200", "$200-250", "$250+"]
+write_brand_and_price_file("_data/tempTableFile.csv", data_from_csv)
+brand_and_price_data = open_with_csv("_data/tempTableFile.csv", d=',')
+create_table(brand_and_price_data, price_groups, brands, columns, "_charts/prices_in_table.png")

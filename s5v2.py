@@ -29,6 +29,7 @@ def create_bar_chart(price_groups, exported_figure_filename):
 		plt.grid(True) # Yeah, it's a grid or something
 		fig.savefig(exported_figure_filename) # save that graph
 
+
 from collections import Counter # shouldn't this be at the top of the file?
 
 def group_prices_by_range(price_in_float):
