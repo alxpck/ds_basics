@@ -58,5 +58,5 @@ def group_prices_by_range(price_in_float):
 	return tally
 
 price_groups = group_prices_by_range(price_in_float)
-create_bar_chart(price_groups, "_charts/price_in_groups.png")
+create_bar_chart(price_groups, "_charts/s5-price_in_groups.png")
 
