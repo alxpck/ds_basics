@@ -39,3 +39,6 @@ create_line_chart([x[2] for x in gucci_ties[1:]], "Distribution of Prices for Gu
 # list comprehension ... explained? ... start by placing everything inside the brackets, like the list yo, [].  Then place the thing you wanted to append to the list at the beginning of the statement. then use a for loop to iterate throught the set of values. 
 
 # more at http://www.secnetix.de/olli/Python/list_comprehensions.hawk
+
+# FINAL THOUGHTS: 
+# Line charts can be misleading since they show a contiguous line even when there is no data at a certain part of the line. A bar chart (or I imagine a scatter plot) would be better for something like this. Also, I'd plot the price on the Y axis not the X axis, but that's just a personal note
