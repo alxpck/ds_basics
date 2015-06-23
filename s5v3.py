@@ -25,69 +25,67 @@ def count_prices_for_brands(data_sample, brand, min_price, max_price): # overall
 	return count
 
 def build_table_text(data_sample, brands):  
-    cell_text = []
-    row_text = []  
-    
-    unique_brand_list = sorted(set(brands))
-    for b in unique_brand_list: 
-        b = bytes.decode(b)
-        temp_row = [] 
-        group1 = count_prices_for_brands(data_sample, b, 0, 50.00)
-        group2 = count_prices_for_brands(data_sample, b, 50.00, 100.00)
-        group3 = count_prices_for_brands(data_sample, b, 100.00, 150.00)
-        group4 = count_prices_for_brands(data_sample, b, 150.00, 200.00)
-        group5 = count_prices_for_brands(data_sample, b, 200.00, 250.00)
-        group6 = count_prices_for_brands(data_sample, b, 250.00, 1000.00)
-        row_list = [group1, group2, group3, group4, group5, group6]
-        temp_row.extend(row_list) 
-        
-        if group1 > 0:
-          if any([x >= group1 for x in row_list[1:]]):
-              cell_text.append(temp_row)
-              row_text.append(b)
+	cell_text = []
+	row_text = []  
+	unique_brand_list = sorted(set(brands))
+	for b in unique_brand_list: 
+		b = bytes.decode(b)
+		temp_row = [] 
+		group1 = count_prices_for_brands(data_sample, b, 0, 50.00)
+		group2 = count_prices_for_brands(data_sample, b, 50.00, 100.00)
+		group3 = count_prices_for_brands(data_sample, b, 100.00, 150.00)
+		group4 = count_prices_for_brands(data_sample, b, 150.00, 200.00)
+		group5 = count_prices_for_brands(data_sample, b, 200.00, 250.00)
+		group6 = count_prices_for_brands(data_sample, b, 250.00, 1000.00)
+		row_list = [group1, group2, group3, group4, group5, group6]
+		temp_row.extend(row_list) 
 
-    return (cell_text, row_text)
+		if group1 > 0:
+			if any([x >= group1 for x in row_list[1:]]):
+				cell_text.append(temp_row)
+				row_text.append(b)
+	return (cell_text, row_text)
 
 def create_table(data_sample, price_groups, brand_names, columns, exported_figure_filename):
-    tup = build_table_text(data_sample, brand_names)
+	tup = build_table_text(data_sample, brand_names) # create a tuple of the table text using the brand names
+	fig = plt.figure() # create a figure object
+	ax = fig.add_subplot(1, 1, 1) # create an axis object
 
-    fig = plt.figure()
-    ax = fig.add_subplot(1, 1, 1)
+	for group in price_groups: # iterate through the price groups
+		plt.bar(group, price_groups[group]) # create a bar for each price group
 
-    for group in price_groups:
-        plt.bar(group, price_groups[group]) #color=colors[group%len(price_groups)]
-
-    ax.table(cellText=tup[0], colLabels=columns, rowLabels=tup[1], loc='bottom')
-    ax.text(-1.3, 0, 'Discounted Ties Brands', size=12, horizontalalignment='left', verticalalignment='top')
-    ax.tick_params(
-        axis='x',          # changes apply to the x-axis
-        which='both',      # both major and minor ticks are affected
-        labelbottom='off') # labels along the bottom edge are off
-
-    fig.savefig(exported_figure_filename, dpi=400, bbox_inches='tight')
+	if tup[0] and tup[1]: # check that the tuple has two values, if so... 
+		ax.table(cellText=tup[0], colLabels=columns, rowLabels=tup[1], loc='bottom') # use the first value as the cell text, use teh second value as the row label and create a table on the axis object
+		ax.text(-1.3, 0, 'Discounted Ties Brands', size=12, horizontalalignment='left', verticalalignment='top') # create text on the axis object, hard-coded inputs
+		ax.tick_params(
+			axis='x',          # changes apply to the x-axis
+			which='both',      # both major and minor ticks are affected
+			labelbottom='off') # labels along the bottom edge are off
+			# set the ticks for the axis, this is all visual formatting
+	fig.savefig(exported_figure_filename, dpi=400, bbox_inches='tight') # save the newly created figure 
 
 from collections import Counter
-def group_prices_by_range(prices_in_float):
-    
-    tally = Counter()
+def group_prices_by_range(prices_in_float): # we used this function in a previous lesson. It helps us sort prices into rough categories/buckets/ranges so that our bar chart is easier to read. 
 
-    for item in prices_in_float:
-        bucket = 0
-        rounded_price = round(item, -1)
-        if 0 <= rounded_price <= 50:
-            bucket = 1
-        elif 50 <= rounded_price <= 100:
-            bucket = 2
-        elif 100 <= rounded_price <= 150:
-            bucket = 3
-        elif 150 <= rounded_price <= 200:
-            bucket = 4
-        elif 200 <= rounded_price <= 250:
-            bucket = 5
-        elif 250 <= rounded_price:
-            bucket = 6
-        else:
-            bucket = 7
+	tally = Counter()
 
-        tally[bucket] += 1
-    return tally
+	for item in prices_in_float:
+		bucket = 0
+		rounded_price = round(item, -1)
+		if 0 <= rounded_price <= 50:
+			bucket = 1
+		elif 50 <= rounded_price <= 100:
+			bucket = 2
+		elif 100 <= rounded_price <= 150:
+			bucket = 3
+		elif 150 <= rounded_price <= 200:
+			bucket = 4
+		elif 200 <= rounded_price <= 250:
+			bucket = 5
+		elif 250 <= rounded_price:
+			bucket = 6
+		else:
+			bucket = 7
+
+		tally[bucket] += 1
+	return tally
