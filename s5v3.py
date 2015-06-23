@@ -15,3 +15,11 @@ def pretty_average(my_number):
 	return pretty_avg
 
 # my_table() # run the function
+
+def count_prices_for_brands(data_sample, brand, min_price, max_price): # overall this function should let us enter a dataset, a brand name, and a price range min-max and then give us a count of how many ties fit these criteria in the data sample
+	count = 0 # initialize a counter variable at 0
+	for row in data_sample: # loop through the data
+		if str(row[0]) == str(brand): # check to see if a  string in the header row is equal to the string of the brand (name) variable, ... actually this is a bit confusing. I think it's going to check the whole first row of the data sample (the header row), but I don't know what the brand argument is going to be if what we were really doing was checking the string of row[4] (column 4, i.e. brand name) then it would make more sense because we'd be checking to see if the row contained a brand we cared about, as is now I'm not sure what we're doing...  
+			if min_price < float(row[1]) < max_price: # check to see if the float of the value in row/column 1 (the price column is greater than the min_price we care about (entered as an arg) and less than the max_price we care about (entered as an arg) ... if so ... 
+				count += 1 # incriment the count by one
+	return count
