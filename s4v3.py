@@ -18,4 +18,4 @@ def save_spreadsheet(filename, data_sample):
 	wb.save(filename)
 
 kiton_ties = filter_col_by_string(data_from_csv, "brandName", "Kiton")
-save_spreadsheet("_data/s4-kiton.xlsx", kiton_ties)
+# save_spreadsheet("_data/s4-kiton.xlsx", kiton_ties)
